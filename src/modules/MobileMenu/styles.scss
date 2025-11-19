@@ -1,0 +1,14 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(2px);
+}
+
+.menu-panel {
+  width: 75%;
+  height: 100%;
+  background: white;
+  padding: 2rem;
+  animation: slideIn 0.3s ease forwards;
+}

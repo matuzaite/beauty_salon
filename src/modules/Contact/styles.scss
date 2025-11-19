@@ -1,0 +1,100 @@
+.contact-container {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.contact-container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.professionals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .professionals-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.professional-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #741b14 0%, #dbd9de 100%);
+  color: white;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card-header .position {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item .label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.contact-item a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.95rem;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
