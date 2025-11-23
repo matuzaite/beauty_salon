@@ -1,100 +1,161 @@
 .contact-container {
-  padding: 3rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 20px 0;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .contact-container h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  margin-bottom: 1rem;
+  color: #28313b;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
 }
 
-.contact-container > p {
-  text-align: center;
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 3rem;
-}
 
-.professionals-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  padding: 1rem 0;
-}
-
-@media (max-width: 768px) {
-  .professionals-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-.professional-card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.professionals-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: inherit;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 900px;
+  table-layout: fixed;
 }
 
-.professional-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.professionals-table thead {
+  background: transparent;
+  color: inherit;
 }
 
-.card-header {
-  background: linear-gradient(135deg, #741b14 0%, #dbd9de 100%);
-  color: white;
-  padding: 2rem 1.5rem;
+.professionals-table th,
+.professionals-table td {
+  padding: 18px 20px;
   text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.card-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
+.professionals-table th {
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.card-header .position {
-  margin: 0.5rem 0 0;
-  font-size: 0.95rem;
+.professionals-table td {
+  font-size: 14px;
+}
+
+.professionals-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.professionals-table a {
+  color: #0ea5e9;
+  text-decoration: none;
   font-weight: 500;
-  opacity: 0.95;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
 }
 
-.card-content {
-  padding: 1.5rem;
+.professionals-table a.call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0ea5e9;
+  border: 1px solid #0ea5e9;
+  color: #ffffff;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.12);
 }
 
-.contact-item {
+.professionals-table a.call-btn:hover {
+  background: #057fb1;
+  border-color: #057fb1;
+}
+
+.name-position {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 }
 
-.contact-item:last-child {
-  margin-bottom: 0;
+.name-position .name {
+  font-weight: 700;
+  color: #111827;
 }
 
-.contact-item .label {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #333;
-  margin-bottom: 0.4rem;
+.name-position .position {
+  font-weight: 500;
+  color: #4b5563;
 }
 
-.contact-item a {
-  color: #667eea;
-  text-decoration: none;
-  font-size: 0.95rem;
-  word-break: break-all;
-  transition: color 0.2s ease;
+.call-icon {
+  width: 16px;
+  height: 16px;
 }
 
-.contact-item a:hover {
-  color: #764ba2;
+.professionals-table a.call-btn:focus {
+  outline: 3px solid rgba(14, 165, 233, 0.28);
+  outline-offset: 2px;
+}
+
+.professionals-table tbody tr:hover {
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.professionals-table a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .contact-container h1 {
+    align-items: center;
+  }
+
+  .professionals-table thead {
+    display: none;
+  }
+
+  .professionals-table tr {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  }
+
+  .professionals-table td {
+    display: block;
+    border-bottom: none;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+
+  .professionals-table td::before {
+
+    font-weight: 600;
+    color: #475569;
+    display: block;
+    margin-bottom: 6px;
+  }
+
 }

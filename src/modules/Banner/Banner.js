@@ -12,12 +12,6 @@ const Banner = () => {
           viskas vienoje vietoje.
         </p>
       </div>
-
-      <Button
-        className="btn btn--secondary"
-        label="Rezervuoti laiką"
-        onClick={() => alert("Button clicked!")}
-      />
     </div>
   );
 };

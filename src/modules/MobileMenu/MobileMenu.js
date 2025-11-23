@@ -1,24 +1,21 @@
+import "./styles.scss";
+
 const MobileMenu = ({ closeMenu }) => {
   return (
-    <div className="menu-overlay">
-      <div className="menu-panel">
+    <div className="menu-overlay" onClick={closeMenu}>
+      <div className="menu-panel" onClick={(e) => e.stopPropagation()}>
         <button className="close" onClick={closeMenu}>
-          ×
+          &times;
         </button>
-
         <a href="#services" onClick={closeMenu}>
           Paslaugos
         </a>
-        <a href="#team" onClick={closeMenu}>
-          Komanda
-        </a>
-        <a href="#gallery" onClick={closeMenu}>
-          Galerija
+        <a href="#about" onClick={closeMenu}>
+          Apie Mus
         </a>
         <a href="#contact" onClick={closeMenu}>
           Kontaktai
         </a>
-
         <button className="book-btn">Rezervuoti laiką</button>
       </div>
     </div>

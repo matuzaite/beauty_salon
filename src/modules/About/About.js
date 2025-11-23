@@ -3,7 +3,7 @@ import "./styles.scss";
 
 const About = () => {
   return (
-    <div className="about">
+    <div id="about" className="about">
       <CarouselSection />
     </div>
   );

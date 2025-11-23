@@ -2,28 +2,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
-  background-color: #000000eb;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #f5f5f5;
   margin-bottom: 0;
 }
 
 .services h2 {
-  color: #f5f5f5;
   margin-bottom: 50px;
   font-size: 2.5rem;
+  color: #333;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 30px;
-  width: 90%;
-  max-width: 1200px;
-  padding: 0 20px;
+.scroller {
+  overflow: visible;
+}
+
+.scroller-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.scroller .service-card {
+  flex: 0 0 auto;
+  width: 350px;
+  margin: 0 1rem;
+}
+
+@media (max-width: 768px) {
+
+  .scroller {
+    overflow-x: auto;
+  }
+
+  .scroller .service-card {
+    scroll-snap-align: center;
+  }
 }
 
 .service-card {
-  background-color: #3e3835d3;
+  background-color: #000000d3;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
