@@ -40,7 +40,6 @@ const Footer = () => {
         </div>
 
         <div className="footer-section map">
-          <h2>Mus Rasite</h2>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2257.532624774101!2d24.36319081585543!3d55.74799048055241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e63185a5e5d5b7%3A0x1e2d3f6b6d6b5e5d!2sAuk%C5%A1tai%C4%8Di%C5%B3%20g.%2085%2C%20Panev%C4%97%C5%BEys%2036109%2C%20Lithuania!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
             width="100%"
@@ -56,7 +55,7 @@ const Footer = () => {
             <img src={Logo} alt="" srcset="" />
           </h2>
           <div className="socials">
-            <a href="#">
+            <a href="https://www.facebook.com/ligitosgroziosalonas/">
               <FaFacebook />
             </a>
             <a href="#">

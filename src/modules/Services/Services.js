@@ -3,51 +3,30 @@ import "./styles.scss";
 
 const Services = () => {
   const services = [
-    {
-      id: 1,
-      name: "Kirpimas",
-      image:
-        "https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      id: 2,
-      name: "Dažymas",
-      image:
-        "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202409/hair-colour-damage-185350768-16x9_0.jpg?VersionId=dq4Cp7L4jeR4oJ9ZvMsP2YJDNTzu2ibY&size=690:388",
-    },
-    {
-      id: 3,
-      name: "Plaukų atstatymas",
-      image:
-        "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      id: 4,
-      name: "Grožio procedūros",
-      image:
-        "https://martinocartier.com/blog/wp-content/uploads/2022/08/Depositphotos_76546271_S.jpg",
-    },
+    { id: 1, name: "Kirpimas", priceFrom: 15 },
+    { id: 2, name: "Dažymas", priceFrom: 40 },
+    { id: 3, name: "Plaukų atstatymas", priceFrom: 25 },
+    { id: 4, name: "Grožio procedūros", priceFrom: 30 },
+    { id: 5, name: "Manikiūras", priceFrom: 20 },
+    { id: 6, name: "Pedikiūras", priceFrom: 25 },
+    { id: 7, name: "Antakių korekcija", priceFrom: 10 },
+    { id: 8, name: "Makiažas", priceFrom: 35 },
   ];
 
-  // Static layout — no JS-driven animation needed
-
   return (
-    <div id="services" className="services">
+    <div id="services" className="services services-list-wrapper">
       <h2>Paslaugos</h2>
-      <div className="scroller">
-        <div className="scroller-inner">
-          {services.map((service) => (
-            <div key={service.id} className="service-card">
-              <img
-                src={service.image}
-                alt={service.name}
-                className="service-image"
-              />
-              <h3>{service.name}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ul className="services-list" aria-label="Paslaugų kainos">
+        {services.map((s) => (
+          <li key={s.id} className="service-line">
+            <span className="service-name">{s.name}</span>
+            <span className="service-price">nuo {s.priceFrom} €</span>
+          </li>
+        ))}
+      </ul>
+      <p className="services-note">
+        * Kainos gali kisti priklausomai nuo plaukų būklės ir pageidavimų.
+      </p>
     </div>
   );
 };

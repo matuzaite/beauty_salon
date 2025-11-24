@@ -16,7 +16,6 @@ const MobileMenu = ({ closeMenu }) => {
         <a href="#contact" onClick={closeMenu}>
           Kontaktai
         </a>
-        <button className="book-btn">Rezervuoti laiką</button>
       </div>
     </div>
   );
