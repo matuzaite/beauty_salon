@@ -1,39 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./styles.scss";
 
 const Contact = () => {
-  const professionals = [
-    {
-      id: 1,
-      name: "Ligita",
-      position: "Kirpėja",
-      phone: "+370 XXX XXX XX",
-    },
-    {
-      id: 2,
-      name: "Nijole",
-      position: "Kirpėja",
-      phone: "+370 XXX XXX XX",
-    },
-    {
-      id: 3,
-      name: "Daiva",
-      position: "Kirpėja",
-      phone: "+370 XXX XXX XX",
-    },
-    {
-      id: 4,
-      name: "Eglė",
-      position: "Vizažistė",
-      phone: "+370 XXX XXX XX",
-    },
-    {
-      id: 5,
-      name: "Dovilė",
-      position: "Vyrų Kirpėja",
-      phone: "+370 XXX XXX XX",
-    },
-  ];
+  const [professionals, setProfessionals] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3006/specialists")
+      .then((res) => setProfessionals(res.data))
+      .catch((err) =>
+        console.error("Error loading specialists:", err)
+      );
+  }, []);
 
   const renderList = () => (
     <table className="professionals-table" role="table">
@@ -47,7 +26,9 @@ const Contact = () => {
             <td className="name-position-cell" data-label="Name & Position">
               <div className="name-position">
                 <span className="name">{professional.name}</span>
-                <span className="position">{professional.position}</span>
+                <span className="position">
+                  {professional.specialization}
+                </span>
               </div>
             </td>
 
