@@ -7,6 +7,7 @@ import Contact from "./modules/Contact/Contact";
 import Footer from "./modules/Footer/Footer";
 
 function App() {
+
   return (
     <div className="App">
       <Navbar />
@@ -14,7 +15,6 @@ function App() {
       <About />
       <Services />
       <Contact />
-
       <Footer />
     </div>
   );

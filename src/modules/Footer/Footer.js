@@ -52,7 +52,7 @@ const Footer = () => {
 
         <div className="footer-section">
           <h2 className="logo-text">
-            <img src={Logo} alt="" srcset="" />
+            <img src={Logo} alt="" srcSet="" />
           </h2>
           <div className="socials">
             <a href="https://www.facebook.com/ligitosgroziosalonas/">
