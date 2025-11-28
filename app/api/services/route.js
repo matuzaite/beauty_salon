@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import prisma from "@/lib/prisma";
 
 const safeJson = (data) =>
@@ -12,6 +14,7 @@ export async function GET() {
     const services = await prisma.services.findMany({
       orderBy: { id: "asc" },
     });
+
     return Response.json(safeJson(services));
   } catch (err) {
     console.error("API /services error:", err);
