@@ -1,11 +1,9 @@
-export const runtime = "nodejs";
-
 import prisma from "@/lib/prisma";
 
 const safeJson = (data) =>
   JSON.parse(
     JSON.stringify(data, (_, value) =>
-      typeof value === "bigint" ? Number(value) : value
+      typeof value === "bigint" ? value.toString() : value
     )
   );
 
@@ -14,7 +12,6 @@ export async function GET() {
     const specialists = await prisma.specialists.findMany({
       orderBy: { id: "asc" },
     });
-
     return Response.json(safeJson(specialists));
   } catch (err) {
     console.error("API /specialists error:", err);
