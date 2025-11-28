@@ -1,9 +1,11 @@
-export const dynamic = "force-dynamic";
-
 import prisma from "@/lib/prisma";
-import { NextResponse } from "next/server";
 
 export async function GET() {
-  const specialists = await prisma.specialists.findMany();
-  return NextResponse.json(specialists);
+  try {
+    const specialists = await prisma.specialists.findMany();
+    return Response.json(specialists);
+  } catch (err) {
+    console.error("API /specialists error:", err);
+    return new Response("Server error", { status: 500 });
+  }
 }
