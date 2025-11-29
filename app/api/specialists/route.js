@@ -1,13 +1,14 @@
 import prisma from "@/lib/prisma";
 export const runtime = 'nodejs';
 
-async function withRetry(fn, { attempts = 3, delayMs = 500 } = {}) {
+async function withRetry(fn, { attempts = 3, baseDelayMs = 300 } = {}) {
   let lastErr;
   for (let i = 0; i < attempts; i++) {
     try {
       return await fn();
     } catch (e) {
       lastErr = e;
+      const delayMs = baseDelayMs * Math.pow(2, i);
       if (i < attempts - 1) await new Promise(r => setTimeout(r, delayMs));
     }
   }
