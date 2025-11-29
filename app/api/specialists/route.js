@@ -1,24 +1,13 @@
 import prisma from "@/lib/prisma";
-export const runtime = 'nodejs';
-
-async function withRetry(fn, { attempts = 3, baseDelayMs = 300 } = {}) {
-  let lastErr;
-  for (let i = 0; i < attempts; i++) {
-    try {
-      return await fn();
-    } catch (e) {
-      lastErr = e;
-      const delayMs = baseDelayMs * Math.pow(2, i);
-      if (i < attempts - 1) await new Promise(r => setTimeout(r, delayMs));
-    }
-  }
-  throw lastErr;
-}
 
 export async function GET() {
   try {
-    const specialists = await withRetry(() => prisma.specialists.findMany());
-    return Response.json(specialists);
+    const specialists = await prisma.specialists.findMany();
+    const serialized = specialists.map((s) => ({
+      ...s,
+      id: typeof s.id === "bigint" ? s.id.toString() : s.id,
+    }));
+    return Response.json(serialized);
   } catch (error) {
     console.error("API /specialists error:", error);
     return Response.json({ error: error.message }, { status: 500 });
