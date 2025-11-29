@@ -1,5 +1,6 @@
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -17,4 +18,3 @@ model specialists {
   specialization String?
   phone          String?
 }
-
