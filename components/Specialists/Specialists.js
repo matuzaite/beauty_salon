@@ -16,7 +16,7 @@ const Specialists = () => {
 
   return (
     <div className="contact-container" id="contact">
-      <h2>Specialistai</h2>
+      <h2>Specialistės</h2>
 
       <table className="professionals-table">
         <tbody>

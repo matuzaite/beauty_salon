@@ -15,7 +15,7 @@ const Services = () => {
 
   return (
     <div id="services" className="services-list-wrapper">
-      <h2>Mūsų Paslaugos</h2>
+      <h2>Paslaugos</h2>
 
       <ul className="services-list">
         {services.map(service => (
