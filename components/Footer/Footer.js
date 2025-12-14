@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        &copy; {new Date().getFullYear()} Ligitos Grožio Salonas | Dizainas ir programavimas Austėja Matuzaitė
+        &copy; {new Date().getFullYear()} Ligitos Grožio Salonas <br /> Dizainas ir programavimas Austėja Matuzaitė
       </div>
     </footer>
   );
