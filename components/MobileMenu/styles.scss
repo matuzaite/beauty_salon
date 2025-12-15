@@ -1,21 +1,16 @@
 .menu-overlay {
-  position: fixed;
-  top: var(--navbar-height, 120px);
+  position: absolute;
+  top: 100%;       
   left: 0;
   right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(3px);
   z-index: 1000;
-  overflow-y: auto;
-  opacity: 0;
-  animation: fadeOverlay 0.25s ease forwards;
-  will-change: opacity;
-  padding: 0 0 24px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  padding: 0 0 24px;
 }
+
 
 .menu-panel {
   position: relative;
@@ -31,7 +26,7 @@
   animation: panelIn 0.28s ease forwards;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
   will-change: transform, opacity;
-  max-height: min(50vh, 420px);
+  max-height: min(50dvh, 420px);
   overflow-y: auto;
 }
 

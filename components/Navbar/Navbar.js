@@ -63,7 +63,7 @@ const Navbar = () => {
       <nav ref={navRef} className="navbar">
         <div className="navbar__logo">
           <a href="/">
-                <Image id="logo" src="/images/logotipas.svg" alt="salon logo" width={180} height={80} />
+            <Image id="logo" src="/images/logotipas.svg" alt="salon logo" width={180} height={80} />
           </a>
         </div>
 
@@ -83,7 +83,14 @@ const Navbar = () => {
           <FaBars />
         </div>
       </nav>
-      {isMenuOpen && <MobileMenu closeMenu={toggleMenu} />}
+      {isMenuOpen && (
+        <>
+          <div className="menu-backdrop" onClick={toggleMenu} />
+          <div className="menu-dropdown">
+            <MobileMenu closeMenu={toggleMenu} />
+          </div>
+        </>
+      )}
     </>
   );
 };
